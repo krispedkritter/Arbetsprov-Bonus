@@ -1,0 +1,28 @@
+<div style="display: flex; justify-content: space-between;">
+    <h1 id="tableLabel">Bonusberäkning</h1>
+    <h5 style="float: right; margin-bottom: 0; margin-top: auto;">Nettoresultat: 
+        <input [(ngModel)]="netResult" (ngModelChange)="updateAllFactors()" style="width:11.5rem;">
+    </h5>
+</div>
+<p *ngIf="!(consultants$ | async)"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="consultants$ | async as consultants">
+  <thead>
+    <tr>
+      <th>Konsult</th>
+      <th>År som anställd</th>
+      <th>Resulterande bonus</th> 
+      <th>Debiterade timmar</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let consultant of consultants; let i = index">
+      <tr>
+        <td>{{consultant.firstName}} {{consultant.lastName}}</td>
+        <td>{{ calculateYearsEmployed(consultant.startDate)}}</td>
+        <td>{{ bonuses[i] ? bonuses[i].bonus : 0 }} kr</td>
+        <td><input [(ngModel)]="bonuses[i].deductedHours" (ngModelChange)="updateAllFactors()" style="width: 3rem;"></td>
+    </tr>
+    </ng-container>
+  </tbody>
+</table>

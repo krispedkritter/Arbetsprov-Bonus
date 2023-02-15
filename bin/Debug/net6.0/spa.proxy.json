@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "http://localhost:44460",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Arbetsprov\\2\\Arbetsprov-Bonus\\ClientApp\\",
+"MaxTimeoutInSeconds": "120"
+}
+}

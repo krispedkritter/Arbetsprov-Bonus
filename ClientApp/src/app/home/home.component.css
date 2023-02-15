@@ -1,0 +1,22 @@
+.navbar-nav {
+    display: flex;
+    align-items: left;
+    }
+    
+    .nav-item {
+    margin-right: 1rem;
+    }
+    
+    .nav-link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #333333;
+    }
+    
+    .nav-link:hover {
+    color: #00bfff;
+    }
+    
+    .link-active {
+    font-weight: bold;
+    }

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "ucpi1GZF9ttP2f03359U/tOqHB5yuJQpeeRMI82Zgj8=",
+  "Source": "Arbetsprov-Bonus",
+  "BasePath": "_content/Arbetsprov-Bonus",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Arbetsprov-Bonus\\wwwroot",
+      "Source": "Arbetsprov-Bonus",
+      "ContentRoot": "C:\\Arbetsprov\\2\\Arbetsprov-Bonus\\wwwroot\\",
+      "BasePath": "_content/Arbetsprov-Bonus",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Arbetsprov\\2\\Arbetsprov-Bonus\\wwwroot\\favicon.ico",
+      "SourceId": "Arbetsprov-Bonus",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Arbetsprov\\2\\Arbetsprov-Bonus\\wwwroot\\",
+      "BasePath": "_content/Arbetsprov-Bonus",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}

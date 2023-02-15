@@ -1,0 +1,49 @@
+<h1 id="tableLabel">Konsulter</h1>
+
+<p *ngIf="!consultants"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="consultants">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Förnamn</th>
+      <th>Efternamn</th>
+      <th>Anställningsdatum</th>
+      <th><button class="btn-primary btn-sm" (click)="addMode = true">Lägg till ny konsult</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="addMode">
+      <td>--</td>
+      <td><input [(ngModel)]="newConsultant.firstName" type="text"></td>
+      <td><input [(ngModel)]="newConsultant.lastName" type="text"></td>
+      <td><input [(ngModel)]="newConsultant.startDate" type="date"></td>
+      <td>
+        <button class="btn-primary btn-sm" (click)="Add(newConsultant); addMode = false">Lägg till</button>
+        <button class="btn-danger btn-sm" (click)="addMode = false">Avbryt</button>
+      </td>
+    </tr>
+    <ng-container *ngFor="let consultant of consultants">
+      <tr *ngIf="!editMode || editConsultant != consultant.id">
+        <td>{{consultant.id}}</td>
+        <td>{{consultant.firstName}}</td>
+        <td>{{consultant.lastName}}</td>
+        <td>{{consultant.startDate | date}}</td>
+        <td>
+          <button class="btn-warning btn-sm" (click)="Edit(consultant)">Redigera</button>
+          <button class="btn-danger btn-sm" (click)="Remove(consultant.id)">Ta bort</button>
+        </td>
+      </tr>
+      <tr *ngIf="editMode && editConsultant == consultant.id">
+        <td>{{consultant.id}}</td>
+        <td><input [(ngModel)]="consultant.firstName" type="text"></td>
+        <td><input [(ngModel)]="consultant.lastName" type="text"></td>
+        <td><input [(ngModel)]="consultant.startDate" type="date"></td>
+        <td>
+          <button class="btn-primary btn-sm" (click)="Update(consultant, false)">Spara</button>
+          <button class="btn-danger btn-sm" (click)="Update(consultant, true)">Avbryt</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
